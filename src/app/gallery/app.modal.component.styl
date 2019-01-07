@@ -1,0 +1,67 @@
+@require '../../styles/variables'
+
+.uppercase
+  text-transform: uppercase
+
+.modal
+  position: absolute
+  background: $white
+  width: 100vw
+  height: 100vh
+  z-index: 99
+  animation: fadein 0.5s
+
+@keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.modal--closer
+  position: absolute
+  z-index: 399
+  top: 36px
+  left: 36px
+  height: 30px
+  cursor: pointer
+
+.modal--arrow
+  height: 30px
+  cursor: pointer
+  &.up
+    transform: rotate(180deg);
+
+.modal--siderbarWrapper
+  position: relative
+  z-index: 299
+  display: flex
+  height: 100%
+  align-items: center
+  .modal--sidebar
+    width: 250px
+
+.modal--mainImageContainer
+  position: absolute
+  z-index: 199
+  top: 0
+  left: 0
+  width: calc(100vw - 336px)
+  height: calc(100vh - 72px)
+  padding-left: 300px
+  padding-right: 36px
+  padding-top: 36px
+  padding-bottom: 36px
+  display: flex
+  align-items: center
+  justify-content: center
+  .modal--mainImageWrapper
+    width: 100%
+    height: 100%
+    max-height: 750px
+    max-width: 800px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    .modal--mainImage
+      max-height: 100%
+      max-width: 100%

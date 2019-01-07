@@ -1,0 +1,18 @@
+<div class="container header">
+  <div class="row col-12">
+    <button (click)="routesIndex()" class="logo--button">
+      <img class="logo--img" src="assets/logo-der-greif.svg"/>
+    </button>
+  </div>
+  <div class="row col-12">
+    <div class="menu">
+        <a (click)="routesIndex()" routerLink="/index" routerLinkActive="active" class="menu--item">Thread Count</a>
+        <a (click)="routesAbout()" routerLink="/about" routerLinkActive="active" class="menu--item">About</a>
+    </div>
+    <div class="counter">
+      <!-- maybe later -->
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

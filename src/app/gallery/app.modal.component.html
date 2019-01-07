@@ -1,0 +1,19 @@
+<div #modal id="{{image.group}}{{image.number}}" [@easeOut]="state" class="container row modal">
+  <img class="modal--closer" (click)="closeModal()" src="assets/close.svg"/>
+  <div class="modal--siderbarWrapper">
+    <div class="modal--sidebar">
+      <img class="modal--arrow up" (click)="lastImage()" src="assets/arrow.svg" />
+      <p class="modal--p">{{image.group}}{{image.number}}</p>
+      <p class="modal--p"><span class="uppercase">{{image.author}}</span> – {{image.title}} {{image.series!='null' ? '('+image.series+')' : '' }}</p>
+      <p class="modal--p">{{image.year!='null' ? image.year : '' }}</p>
+      <p class="modal--p">{{image.count}} of 25 prints left</p>
+      <img class="modal--arrow" (click)="nextImage()" src="assets/arrow.svg" />
+  </div>
+  </div>
+  <div class="modal--mainImageContainer">
+    <div class="modal--mainImageWrapper">
+      <img class="modal--mainImage" src="/data/1500px-images/{{image.filename}}"/>
+    </div>
+  </div>
+</div>
+

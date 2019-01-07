@@ -1,0 +1,33 @@
+@require '../../styles/variables'
+
+.form--warpper
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: flex
+  width: auto
+
+.form--column
+  padding-right: 36px
+
+.form--p
+  margin-bottom: 5px
+
+.btn
+  margin-top: 50px
+  background-color: transparent
+  border: 1px solid $black
+  width: 100px
+  height: 30px
+  cursor: pointer
+  &:hover
+    background-color: rgba(0,0,0,0.075)
+
+/* Safari 7.1+ */
+_::-webkit-full-page-media, _:future, :root .safari_only
+  display: -webkit-box !important
+
+/* Safari 9.0-10.0 (not 10.1) */
+_::-webkit-:not(:root:root), .safari_only
+  display: -webkit-box !important
+

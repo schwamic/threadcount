@@ -1,0 +1,6 @@
+<div class="container row col-12 gallery safari_only" (window:scroll)="onScroll($event)">
+    <app-threadcount *ngFor="let index of createRange()" [index]="index"></app-threadcount>
+    <div *ngIf="loader" class="gallery--loaderWrapper">
+      <img (click)="loadMoreThreads()" class="loader" src="assets/arrow.svg"/>
+    </div>
+</div>

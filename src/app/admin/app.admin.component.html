@@ -1,0 +1,20 @@
+<div class="container raw admin">
+  <form #f="ngForm"  class="form" (ngSubmit)="onSubmit(f.value)">
+    <div class="form--warpper safari_only">
+      <div class="form--column" *ngFor="let group of columns">
+        <div class="form--element" *ngFor="let img of data[group]">
+          <p class="form--p">{{img.group}}{{img.number}}:</p>
+          <input class="form--input"
+            type="text"
+            name="{{img.group}}-{{img.number}}"
+            id="{{img.group}}-{{img.number}}"
+            ngModel="{{img.count}}"/>
+        </div>
+      </div>
+    </div>
+    <button class="btn" type="submit">Save</button>
+    <p *ngIf="waiting">...waiting</p>
+    <p *ngIf="success">success!</p>
+    <p *ngIf="error">error!</p>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="threadcount--column" [ngClass]="{'no-border':lastElement()}">
+    <div class="image--container" *ngFor="let image of threadImages">
+        <p class="image--p">{{image.group}}{{image.number}}</p>
+        <p class="image--p"><span class="uppercase">{{image.author}}</span> – {{image.title}} {{image.series!='null' ? '('+image.series+')' : '' }}</p>
+        <p class="image--p">{{image.year!='null' ? image.year : '' }}</p>
+        <img (click)="showModal(image.number)" *ngIf="image.count != 0" class="image--img hide-mobile" src="/assets/data/600px-thumbnails/{{image.filename}}"/>
+        <img *ngIf="image.count != 0" class="image--img hide-desktop" src="/assets/data/600px-thumbnails/{{image.filename}}"/>
+        <div class="image--img removed" *ngIf="image.count == 0">
+          <p>IMAGE HAS BEEN <br> REMOVED BY VISITORS</p>
+        </div>
+        <p class="image--p">{{image.count}} of 25 prints left</p>
+        <img *ngIf="image.number != 8" class="image--arrow" src="assets/arrow.svg"/>
+    </div>
+</div>
+<app-modal *ngIf="activeModal==true" (activeModal)="setModal($event)" [threadImages]="threadImages" [number]="number"></app-modal>
